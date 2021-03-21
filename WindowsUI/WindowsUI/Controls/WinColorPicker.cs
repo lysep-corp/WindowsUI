@@ -9,14 +9,27 @@ using System.ComponentModel;
 
 namespace WindowsUI.Controls
 {
+    [DefaultEvent("ColorChanged")]
     public class WinColorPicker : Control
     {
+        [Category("Windows UI")]
+        [DisplayName("Normal Color")]
+        public Color Normal { get; set; } = Color.FromArgb(25, 25, 25);
+
+        [Category("Windows UI")]
+        [DisplayName("Selected Color")]
+        public Color SelectedColor { get; set; } = Color.FromArgb(255, 255, 255);
+
         public WinColorPicker()
         {
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.Size = new Size(95, 95);
             this.BackColor = Color.Transparent;
         }
+        public delegate void colorChanged(object sender, ColorChangedEventArgs e);
+        public event colorChanged ColorChanged;
+        PictureBox pbColorWheel = new PictureBox();
+        PictureBox selectedColor = new PictureBox();
 
         protected override void OnCreateControl()
         {
@@ -34,13 +47,6 @@ namespace WindowsUI.Controls
             this.Controls.Add(selectedColor);
             this.Controls.Add(pbColorWheel);
         }
-
-        [Category("Windows UI")]
-        [DisplayName("Normal Color")]
-        public Color Normal { get; set; } = Color.FromArgb(25, 25, 25);
-
-        PictureBox pbColorWheel = new PictureBox();
-        PictureBox selectedColor = new PictureBox();
 
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -66,6 +72,7 @@ namespace WindowsUI.Controls
             if (e.Button == MouseButtons.Left)
             {
                 MouseDown = true;
+                ColorWheel_SelectColor(sender, e);
             }
         }
 
@@ -89,8 +96,13 @@ namespace WindowsUI.Controls
 
                                 selectedColor.Location = new Point(e.X + x, e.Y - y);
 
-                                selectedColor.BackColor = processedBtmap.GetPixel(e.X, e.Y);
+                                selectedColor.BackColor = output;
                                 selectedColor.Visible = true;
+                                SelectedColor = output;
+                                if(ColorChanged != null)
+                                {
+                                    ColorChanged(this, new ColorChangedEventArgs() { Color = output});
+                                }
                             }
                             else
                             {
@@ -105,6 +117,12 @@ namespace WindowsUI.Controls
         private void ColorWheel_End(object sender, MouseEventArgs e)
         {
             MouseDown = false;
+            selectedColor.Visible = false;
         }
+    }
+
+    public class ColorChangedEventArgs : EventArgs
+    {
+        public Color Color { get; set; }
     }
 }

@@ -24,7 +24,6 @@ namespace Demo
 
         private void winCheckbox1_CheckedChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("asd");
             ShowTitle = winCheckbox1.Checked;
             this.Refresh();
         }
@@ -44,6 +43,11 @@ namespace Demo
         private void winToggleSwitch1_CheckedChanged(object sender)
         {
             Application.DoEvents();
+        }
+
+        private void winColorPicker2_ColorChanged(object sender, WindowsUI.Controls.ColorChangedEventArgs e)
+        {
+            pictureBox1.BackColor = e.Color;
         }
 
         //private void button1_Click(object sender, EventArgs e)

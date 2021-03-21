@@ -36,9 +36,11 @@ namespace Demo
             this.winCheckbox1 = new WindowsUI.Controls.WinCheckbox();
             this.label1 = new System.Windows.Forms.Label();
             this.winColorPicker1 = new WindowsUI.Controls.WinColorPicker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.winColorPicker2 = new WindowsUI.Controls.WinColorPicker();
             this.pnlTop.SuspendLayout();
             this.winPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -113,7 +115,7 @@ namespace Demo
             this.winPanel1.Controls.Add(this.winButton1);
             this.winPanel1.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.winPanel1.ForeColor = System.Drawing.Color.White;
-            this.winPanel1.Location = new System.Drawing.Point(12, 47);
+            this.winPanel1.Location = new System.Drawing.Point(12, 36);
             this.winPanel1.Name = "winPanel1";
             this.winPanel1.Normal = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.winPanel1.Opacity = 128;
@@ -186,18 +188,29 @@ namespace Demo
             this.winColorPicker1.Location = new System.Drawing.Point(0, 0);
             this.winColorPicker1.Name = "winColorPicker1";
             this.winColorPicker1.Normal = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.winColorPicker1.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.winColorPicker1.Size = new System.Drawing.Size(95, 95);
             this.winColorPicker1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(319, 69);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // winColorPicker2
             // 
             this.winColorPicker2.BackColor = System.Drawing.Color.Transparent;
-            this.winColorPicker2.Location = new System.Drawing.Point(287, 123);
+            this.winColorPicker2.Location = new System.Drawing.Point(218, 69);
             this.winColorPicker2.Name = "winColorPicker2";
             this.winColorPicker2.Normal = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.winColorPicker2.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.winColorPicker2.Size = new System.Drawing.Size(95, 95);
-            this.winColorPicker2.TabIndex = 5;
+            this.winColorPicker2.TabIndex = 8;
             this.winColorPicker2.Text = "winColorPicker2";
+            this.winColorPicker2.ColorChanged += new WindowsUI.Controls.WinColorPicker.colorChanged(this.winColorPicker2_ColorChanged);
             // 
             // MainForm
             // 
@@ -205,6 +218,7 @@ namespace Demo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.winColorPicker2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.winCheckbox1);
             this.Controls.Add(this.winPanel1);
@@ -216,9 +230,11 @@ namespace Demo
             this.Controls.SetChildIndex(this.winPanel1, 0);
             this.Controls.SetChildIndex(this.winCheckbox1, 0);
             this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.winColorPicker2, 0);
             this.pnlTop.ResumeLayout(false);
             this.winPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,6 +247,7 @@ namespace Demo
         private System.Windows.Forms.Label label1;
         private WindowsUI.WinButton winButton2;
         private WindowsUI.Controls.WinColorPicker winColorPicker1;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private WindowsUI.Controls.WinColorPicker winColorPicker2;
     }
 }
