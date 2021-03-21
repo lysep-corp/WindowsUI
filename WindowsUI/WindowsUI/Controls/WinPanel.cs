@@ -63,7 +63,7 @@ namespace WindowsUI
 
             RectangleF Rect = new RectangleF(0, 0, this.Width - 1, this.Height - 1);
             GraphicsPath GraphPath = Methods.GetRoundPath(Rect, BorderRadius);
-            this.Region = new Region(GraphPath);
+            //this.Region = new Region(GraphPath);
 
             SolidBrush brushes = new SolidBrush(Color.FromArgb(Opacity, Normal));
             e.Graphics.FillPath(brushes, GraphPath);

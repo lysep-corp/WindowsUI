@@ -362,6 +362,7 @@ namespace WindowsUI
             if (mov && Resizer)
             {
                 Aero.ChangeAccent(Handle, new Enums.AccentPolicy { GradientColor = 0xFD70000, AccentState = Enums.AccentState.ACCENT_DISABLED });
+                this.Opacity = 0.85;
                 int t_width = MousePosition.X - Mx + Sw;
                 int t_height = MousePosition.Y - My + Sh;
                 if(t_width >= MinWidth)
@@ -378,6 +379,7 @@ namespace WindowsUI
         void SizerMouseUp(object sender, MouseEventArgs e)
         {
             Aero.ChangeAccent(Handle, new Enums.AccentPolicy { GradientColor = 0xFD70000, AccentState = FormAccent });
+            Opacity = 1.0;
             mov = false;
         }
         #endregion

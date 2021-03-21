@@ -21,43 +21,5 @@ namespace Demo
         {
 
         }
-
-        private void winCheckbox1_CheckedChanged(object sender, EventArgs e)
-        {
-            ShowTitle = winCheckbox1.Checked;
-            this.Refresh();
-        }
-
-        private void winButton1_Click(object sender, EventArgs e)
-        {
-            ShowControlBarIcon = false;
-            this.TextAnchor = Enums.TextAnchor.Center;
-        }
-
-        private void winButton2_Click(object sender, EventArgs e)
-        {
-            ShowControlBarIcon = true;
-            this.TextAnchor = Enums.TextAnchor.Right;
-        }
-
-        private void winToggleSwitch1_CheckedChanged(object sender)
-        {
-            Application.DoEvents();
-        }
-
-        private void winColorPicker2_ColorChanged(object sender, WindowsUI.Controls.ColorChangedEventArgs e)
-        {
-            pictureBox1.BackColor = e.Color;
-        }
-
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    this.ShowControlBarIcon = !this.ShowControlBarIcon;
-        //}
-
-        //private void winButton1_Click(object sender, EventArgs e)
-        //{
-        //    this.CloseButton = !this.CloseButton;
-        //}
     }
 }
