@@ -9,11 +9,29 @@ using System.Windows.Forms;
 
 namespace WindowsUI.Controls
 {
+    [DefaultEvent("TextChanged")]
     public class WinTextbox : Control
     {
         [Category("Windows UI")]
         [DisplayName("Normal Color")]
         public Color Normal { get; set; } = Color.FromArgb(25, 25, 25);
+
+        [Category("Windows UI")]
+        [DisplayName("Text Value")]
+        public string TextValue
+        {
+            get
+            {
+                return tbValue.Text;
+            }
+            set
+            {
+                tbValue.Text = value;
+            }
+        }
+
+        public delegate void textChanged(object sender, EventArgs e);
+        public event textChanged TextChanged;
 
         public WinTextbox()
         {
@@ -28,10 +46,20 @@ namespace WindowsUI.Controls
             tbValue.Multiline = true;
             tbValue.Font = new Font("Segoe UI Semibold", 9f);
             tbValue.ForeColor = Color.White;
+            tbValue.TextChanged += new EventHandler(Invoke_TextChanged);
 
             this.BackColor = tbValue.BackColor;
             this.Controls.Add(tbValue);
         }
+
+        private void Invoke_TextChanged(object sender, EventArgs e)
+        {
+            if(TextChanged != null)
+            {
+                TextChanged(this, e);
+            }
+        }
+
         TextBox tbValue = new TextBox();
 
         protected override void OnCreateControl()

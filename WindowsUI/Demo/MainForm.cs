@@ -21,5 +21,15 @@ namespace Demo
         {
 
         }
+
+        private void winTextbox1_TextChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine(winTextbox1.TextValue);
+        }
+
+        private void winButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

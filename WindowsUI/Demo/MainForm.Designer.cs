@@ -125,6 +125,8 @@ namespace Demo
             this.winTextbox1.Size = new System.Drawing.Size(172, 25);
             this.winTextbox1.TabIndex = 2;
             this.winTextbox1.Text = "winTextbox1";
+            this.winTextbox1.TextValue = "";
+            this.winTextbox1.TextChanged += new WindowsUI.Controls.WinTextbox.textChanged(this.winTextbox1_TextChanged);
             // 
             // pictureBox1
             // 
@@ -147,6 +149,7 @@ namespace Demo
             this.winTextbox2.Size = new System.Drawing.Size(172, 25);
             this.winTextbox2.TabIndex = 4;
             this.winTextbox2.Text = "winTextbox2";
+            this.winTextbox2.TextValue = "";
             // 
             // winButton1
             // 
@@ -162,6 +165,7 @@ namespace Demo
             this.winButton1.TabIndex = 5;
             this.winButton1.Text = "Log In";
             this.winButton1.UseVisualStyleBackColor = false;
+            this.winButton1.Click += new System.EventHandler(this.winButton1_Click);
             // 
             // pictureBox2
             // 
