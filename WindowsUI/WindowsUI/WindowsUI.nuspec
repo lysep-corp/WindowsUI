@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>LysepCorp</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/lysep-corp/WindowsUI</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/lysep-corp/WindowsUI/main/nugetLogo.png</iconUrl>
+    <description>Windows UI for Implementing UWP style to WinForms</description>
+    <releaseNotes>Windows UI v0.5 Alpha release.</releaseNotes>
+    <copyright>$copyright$</copyright>
+    <tags>csharp winforms windowsuı uwp windows10theme theme aero aeroform windowsui</tags>
+  </metadata>
+</package>

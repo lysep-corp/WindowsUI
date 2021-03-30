@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Windows.Forms;
 
 namespace WindowsUI
 {
@@ -94,6 +97,23 @@ namespace WindowsUI
             {
                 Image img = Image.FromStream(memstr);
                 return img;
+            }
+        }
+
+        public static void CopyEvent(Control form, Control src, string fieldName, string eventName, Control dest)
+        {
+            EventHandlerList events = (EventHandlerList)typeof(Control)
+                                       .GetProperty("Events", BindingFlags.NonPublic | BindingFlags.Instance)
+                                       .GetValue(src, null);
+            object key = typeof(Control).GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Static).GetValue(null);
+            EventInfo evInfo = typeof(Control).GetEvent(eventName, BindingFlags.Public | BindingFlags.Instance);
+            Delegate del = events[key];
+            if (del != null)
+            {
+                Delegate d = Delegate.CreateDelegate(evInfo.EventHandlerType, form, del.Method);
+                MethodInfo addHandler = evInfo.GetAddMethod();
+                Object[] addHandlerArgs = { d };
+                addHandler.Invoke(dest, addHandlerArgs);
             }
         }
     }

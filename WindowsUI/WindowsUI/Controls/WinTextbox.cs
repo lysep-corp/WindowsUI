@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,6 +28,48 @@ namespace WindowsUI.Controls
             set
             {
                 tbValue.Text = value;
+            }
+        }
+
+        [Category("Windows UI")]
+        [DisplayName("Password Char")]
+        public char PassChar
+        {
+            get
+            {
+                return tbValue.PasswordChar;
+            }
+            set
+            {
+                tbValue.PasswordChar = value;
+            }
+        }
+
+        [Category("Windows UI")]
+        [DisplayName("Read Only")]
+        public bool ReadOnlyText
+        {
+            get
+            {
+                return tbValue.ReadOnly;
+            }
+            set
+            {
+                tbValue.ReadOnly = value;
+            }
+        }
+
+        [Category("Windows UI")]
+        [DisplayName("Max Length")]
+        public int MaxLength
+        {
+            get
+            {
+                return tbValue.MaxLength;
+            }
+            set
+            {
+                tbValue.MaxLength = value;
             }
         }
 
@@ -61,7 +104,6 @@ namespace WindowsUI.Controls
         }
 
         TextBox tbValue = new TextBox();
-
         protected override void OnCreateControl()
         {
             base.OnCreateControl();
