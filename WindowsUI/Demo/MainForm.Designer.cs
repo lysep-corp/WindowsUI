@@ -43,6 +43,7 @@ namespace Demo
             this.winLabel2 = new WindowsUI.Controls.WinLabel();
             this.winLabel3 = new WindowsUI.Controls.WinLabel();
             this.winPanel1 = new WindowsUI.WinPanel();
+            this.winProgressbar1 = new WindowsUI.Controls.WinProgressbar();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.winCircularPicturebox1)).BeginInit();
@@ -275,6 +276,7 @@ namespace Demo
             this.winPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
             this.winPanel1.BorderRadius = 15;
             this.winPanel1.BorderSize = 2;
+            this.winPanel1.Controls.Add(this.winProgressbar1);
             this.winPanel1.Controls.Add(this.winCircularPicturebox1);
             this.winPanel1.Controls.Add(this.winTileButton1);
             this.winPanel1.Controls.Add(this.winLabel3);
@@ -290,6 +292,22 @@ namespace Demo
             this.winPanel1.Size = new System.Drawing.Size(250, 285);
             this.winPanel1.TabIndex = 15;
             this.winPanel1.Title = "Title";
+            // 
+            // winProgressbar1
+            // 
+            this.winProgressbar1.BackColor = System.Drawing.Color.Transparent;
+            this.winProgressbar1.Border = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.winProgressbar1.Content = "LYSEP";
+            this.winProgressbar1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F);
+            this.winProgressbar1.ForeColor = System.Drawing.Color.White;
+            this.winProgressbar1.Location = new System.Drawing.Point(119, 39);
+            this.winProgressbar1.Name = "winProgressbar1";
+            this.winProgressbar1.Normal = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.winProgressbar1.Progress1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
+            this.winProgressbar1.Progress2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
+            this.winProgressbar1.Size = new System.Drawing.Size(100, 23);
+            this.winProgressbar1.TabIndex = 16;
+            this.winProgressbar1.Value = 90;
             // 
             // MainForm
             // 
@@ -319,10 +337,10 @@ namespace Demo
             this.Controls.SetChildIndex(this.winTextbox2, 0);
             this.Controls.SetChildIndex(this.winButton1, 0);
             this.Controls.SetChildIndex(this.winLabel1, 0);
-            this.Controls.SetChildIndex(this.pnlTop, 0);
             this.Controls.SetChildIndex(this.winCheckbox1, 0);
             this.Controls.SetChildIndex(this.winLabel2, 0);
             this.Controls.SetChildIndex(this.winPanel1, 0);
+            this.Controls.SetChildIndex(this.pnlTop, 0);
             this.pnlTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.winCircularPicturebox1)).EndInit();
@@ -347,5 +365,6 @@ namespace Demo
         private WindowsUI.Controls.WinLabel winLabel2;
         private WindowsUI.Controls.WinLabel winLabel3;
         private WindowsUI.WinPanel winPanel1;
+        private WindowsUI.Controls.WinProgressbar winProgressbar1;
     }
 }
