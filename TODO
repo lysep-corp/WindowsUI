@@ -1,7 +1,15 @@
+30.03.2021
 [+] Bug fix : Text Anchor -> Left : Display problem
 [+] [+] TODO -> Text Anchor -> Change "Right" to "Left"
 [+] ADD  -> Include with Microsoft Data Grabber
 [+] ADD -> Textbox -> Image Display
+
+31.03.2021
 [+] ADD -> Circular Picturebox
 [-] ADD -> Circular Button - Give up
-[-] ADD -> WinProgressbar
+[+] ADD -> WinProgressbar
+
+01.04.2021
+[+] ADD -> Custom Button Placeholder similar of Windows Explorer
+[-] ADD -> WinButton selected state / with Left and Fill Styles
+[+] CHANGE -> Update WinButton from CSharpLoader
