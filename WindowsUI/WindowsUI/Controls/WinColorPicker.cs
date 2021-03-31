@@ -34,7 +34,7 @@ namespace WindowsUI.Controls
         protected override void OnCreateControl()
         {
             base.OnCreateControl();
-            pbColorWheel.Image = (Image)Properties.Resources.colorWheel;
+            pbColorWheel.Image = (Image)Methods.Base64StringToBitmap(Constants.ColorWheel64);
             pbColorWheel.Location = new Point(2, 2);
             pbColorWheel.Size = new Size(Width - 4, Height - 4);
             pbColorWheel.SizeMode = PictureBoxSizeMode.Zoom;

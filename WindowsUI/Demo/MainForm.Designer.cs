@@ -44,10 +44,17 @@ namespace Demo
             this.winLabel3 = new WindowsUI.Controls.WinLabel();
             this.winPanel1 = new WindowsUI.WinPanel();
             this.winProgressbar1 = new WindowsUI.Controls.WinProgressbar();
+            this.winButtonControl1 = new WindowsUI.Controls.WinButtonControl();
+            this.winButton2 = new WindowsUI.WinButton();
+            this.winButton3 = new WindowsUI.WinButton();
+            this.winCheckbox2 = new WindowsUI.Controls.WinCheckbox();
+            this.winProgressbar2 = new WindowsUI.Controls.WinProgressbar();
+            this.winButton4 = new WindowsUI.WinButton();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.winCircularPicturebox1)).BeginInit();
             this.winPanel1.SuspendLayout();
+            this.winButtonControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -124,7 +131,7 @@ namespace Demo
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(52, 58);
+            this.pictureBox1.Location = new System.Drawing.Point(31, 88);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(151, 163);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -134,13 +141,18 @@ namespace Demo
             // winButton1
             // 
             this.winButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.winButton1.Border = System.Drawing.Color.Gray;
+            this.winButton1.BorderSize = 1F;
             this.winButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.winButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.winButton1.ForeColor = System.Drawing.Color.White;
-            this.winButton1.Location = new System.Drawing.Point(47, 320);
+            this.winButton1.Location = new System.Drawing.Point(26, 350);
             this.winButton1.Name = "winButton1";
             this.winButton1.Normal = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.winButton1.Press = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.winButton1.Selected = false;
+            this.winButton1.SelectedBorderSize = 4;
+            this.winButton1.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
             this.winButton1.Size = new System.Drawing.Size(172, 23);
             this.winButton1.TabIndex = 5;
             this.winButton1.Text = "Log In";
@@ -152,7 +164,7 @@ namespace Demo
             this.winLabel1.AutoSize = true;
             this.winLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.winLabel1.ForeColor = System.Drawing.Color.White;
-            this.winLabel1.Location = new System.Drawing.Point(89, 40);
+            this.winLabel1.Location = new System.Drawing.Point(68, 70);
             this.winLabel1.Name = "winLabel1";
             this.winLabel1.Size = new System.Drawing.Size(75, 15);
             this.winLabel1.TabIndex = 8;
@@ -164,7 +176,7 @@ namespace Demo
             this.winTextbox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.winTextbox1.ForeColor = System.Drawing.Color.White;
             this.winTextbox1.Image = ((System.Drawing.Image)(resources.GetObject("winTextbox1.Image")));
-            this.winTextbox1.Location = new System.Drawing.Point(47, 236);
+            this.winTextbox1.Location = new System.Drawing.Point(26, 266);
             this.winTextbox1.MaxLength = 32767;
             this.winTextbox1.Name = "winTextbox1";
             this.winTextbox1.Normal = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
@@ -182,7 +194,7 @@ namespace Demo
             this.winTextbox2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.winTextbox2.ForeColor = System.Drawing.Color.White;
             this.winTextbox2.Image = ((System.Drawing.Image)(resources.GetObject("winTextbox2.Image")));
-            this.winTextbox2.Location = new System.Drawing.Point(47, 267);
+            this.winTextbox2.Location = new System.Drawing.Point(26, 297);
             this.winTextbox2.MaxLength = 32767;
             this.winTextbox2.Name = "winTextbox2";
             this.winTextbox2.Normal = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
@@ -242,7 +254,7 @@ namespace Demo
             this.winCheckbox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.winCheckbox1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F);
             this.winCheckbox1.ForeColor = System.Drawing.Color.White;
-            this.winCheckbox1.Location = new System.Drawing.Point(47, 298);
+            this.winCheckbox1.Location = new System.Drawing.Point(26, 328);
             this.winCheckbox1.Name = "winCheckbox1";
             this.winCheckbox1.Size = new System.Drawing.Size(16, 16);
             this.winCheckbox1.SizeMode = WindowsUI.Enums.SizeMode.Normal;
@@ -253,7 +265,7 @@ namespace Demo
             this.winLabel2.AutoSize = true;
             this.winLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.winLabel2.ForeColor = System.Drawing.Color.White;
-            this.winLabel2.Location = new System.Drawing.Point(65, 299);
+            this.winLabel2.Location = new System.Drawing.Point(44, 329);
             this.winLabel2.Name = "winLabel2";
             this.winLabel2.Size = new System.Drawing.Size(85, 15);
             this.winLabel2.TabIndex = 13;
@@ -283,7 +295,7 @@ namespace Demo
             this.winPanel1.Controls.Add(this.winColorPicker2);
             this.winPanel1.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.winPanel1.ForeColor = System.Drawing.Color.White;
-            this.winPanel1.Location = new System.Drawing.Point(228, 58);
+            this.winPanel1.Location = new System.Drawing.Point(207, 88);
             this.winPanel1.Name = "winPanel1";
             this.winPanel1.Normal = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.winPanel1.Opacity = 128;
@@ -297,7 +309,7 @@ namespace Demo
             // 
             this.winProgressbar1.BackColor = System.Drawing.Color.Transparent;
             this.winProgressbar1.Border = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.winProgressbar1.Content = "LYSEP";
+            this.winProgressbar1.Content = "LYSEP1";
             this.winProgressbar1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F);
             this.winProgressbar1.ForeColor = System.Drawing.Color.White;
             this.winProgressbar1.Location = new System.Drawing.Point(119, 39);
@@ -309,11 +321,113 @@ namespace Demo
             this.winProgressbar1.TabIndex = 16;
             this.winProgressbar1.Value = 90;
             // 
+            // winButtonControl1
+            // 
+            this.winButtonControl1.BackColor = System.Drawing.Color.Black;
+            this.winButtonControl1.Controls.Add(this.winButton2);
+            this.winButtonControl1.Controls.Add(this.winButton3);
+            this.winButtonControl1.Controls.Add(this.winButton4);
+            this.winButtonControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.winButtonControl1.Location = new System.Drawing.Point(0, 30);
+            this.winButtonControl1.Name = "winButtonControl1";
+            this.winButtonControl1.Size = new System.Drawing.Size(490, 26);
+            this.winButtonControl1.TabIndex = 16;
+            // 
+            // winButton2
+            // 
+            this.winButton2.Border = System.Drawing.Color.Black;
+            this.winButton2.BorderSize = 0F;
+            this.winButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.winButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.winButton2.ForeColor = System.Drawing.Color.White;
+            this.winButton2.Location = new System.Drawing.Point(1, 1);
+            this.winButton2.Margin = new System.Windows.Forms.Padding(1);
+            this.winButton2.Name = "winButton2";
+            this.winButton2.Normal = System.Drawing.Color.Black;
+            this.winButton2.Press = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.winButton2.Selected = false;
+            this.winButton2.SelectedBorderSize = 4;
+            this.winButton2.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
+            this.winButton2.Size = new System.Drawing.Size(75, 23);
+            this.winButton2.TabIndex = 0;
+            this.winButton2.Text = "winButton2";
+            this.winButton2.UseVisualStyleBackColor = true;
+            // 
+            // winButton3
+            // 
+            this.winButton3.Border = System.Drawing.Color.Black;
+            this.winButton3.BorderSize = 0F;
+            this.winButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.winButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.winButton3.ForeColor = System.Drawing.Color.White;
+            this.winButton3.Location = new System.Drawing.Point(78, 1);
+            this.winButton3.Margin = new System.Windows.Forms.Padding(1);
+            this.winButton3.Name = "winButton3";
+            this.winButton3.Normal = System.Drawing.Color.Black;
+            this.winButton3.Press = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.winButton3.Selected = false;
+            this.winButton3.SelectedBorderSize = 4;
+            this.winButton3.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
+            this.winButton3.Size = new System.Drawing.Size(75, 23);
+            this.winButton3.TabIndex = 1;
+            this.winButton3.Text = "winButton3";
+            this.winButton3.UseVisualStyleBackColor = true;
+            // 
+            // winCheckbox2
+            // 
+            this.winCheckbox2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.winCheckbox2.BorderColor = System.Drawing.Color.Gray;
+            this.winCheckbox2.Checked = false;
+            this.winCheckbox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.winCheckbox2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F);
+            this.winCheckbox2.ForeColor = System.Drawing.Color.White;
+            this.winCheckbox2.Location = new System.Drawing.Point(334, 13);
+            this.winCheckbox2.Name = "winCheckbox2";
+            this.winCheckbox2.Size = new System.Drawing.Size(16, 16);
+            this.winCheckbox2.SizeMode = WindowsUI.Enums.SizeMode.Normal;
+            this.winCheckbox2.TabIndex = 1;
+            // 
+            // winProgressbar2
+            // 
+            this.winProgressbar2.BackColor = System.Drawing.Color.Transparent;
+            this.winProgressbar2.Border = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
+            this.winProgressbar2.Content = "";
+            this.winProgressbar2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F);
+            this.winProgressbar2.ForeColor = System.Drawing.Color.White;
+            this.winProgressbar2.Location = new System.Drawing.Point(379, 2);
+            this.winProgressbar2.Name = "winProgressbar2";
+            this.winProgressbar2.Normal = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.winProgressbar2.Progress1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
+            this.winProgressbar2.Progress2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
+            this.winProgressbar2.Size = new System.Drawing.Size(100, 23);
+            this.winProgressbar2.TabIndex = 3;
+            // 
+            // winButton4
+            // 
+            this.winButton4.Border = System.Drawing.Color.Black;
+            this.winButton4.BorderSize = 0F;
+            this.winButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.winButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.winButton4.ForeColor = System.Drawing.Color.White;
+            this.winButton4.Location = new System.Drawing.Point(155, 1);
+            this.winButton4.Margin = new System.Windows.Forms.Padding(1);
+            this.winButton4.Name = "winButton4";
+            this.winButton4.Normal = System.Drawing.Color.Black;
+            this.winButton4.Press = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.winButton4.Selected = true;
+            this.winButton4.SelectedBorderSize = 4;
+            this.winButton4.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
+            this.winButton4.Size = new System.Drawing.Size(75, 23);
+            this.winButton4.TabIndex = 3;
+            this.winButton4.Text = "winButton4";
+            this.winButton4.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 355);
+            this.ClientSize = new System.Drawing.Size(490, 464);
+            this.Controls.Add(this.winButtonControl1);
             this.Controls.Add(this.winPanel1);
             this.Controls.Add(this.winLabel2);
             this.Controls.Add(this.winCheckbox1);
@@ -322,6 +436,7 @@ namespace Demo
             this.Controls.Add(this.winTextbox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.winTextbox1);
+            this.FormAccent = WindowsUI.Enums.AccentState.ACCENT_ENABLE_HOSTBACKDROP;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeButton = false;
             this.MinHeight = 150;
@@ -341,11 +456,13 @@ namespace Demo
             this.Controls.SetChildIndex(this.winLabel2, 0);
             this.Controls.SetChildIndex(this.winPanel1, 0);
             this.Controls.SetChildIndex(this.pnlTop, 0);
+            this.Controls.SetChildIndex(this.winButtonControl1, 0);
             this.pnlTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.winCircularPicturebox1)).EndInit();
             this.winPanel1.ResumeLayout(false);
             this.winPanel1.PerformLayout();
+            this.winButtonControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,5 +483,11 @@ namespace Demo
         private WindowsUI.Controls.WinLabel winLabel3;
         private WindowsUI.WinPanel winPanel1;
         private WindowsUI.Controls.WinProgressbar winProgressbar1;
+        private WindowsUI.Controls.WinButtonControl winButtonControl1;
+        private WindowsUI.Controls.WinCheckbox winCheckbox2;
+        private WindowsUI.WinButton winButton2;
+        private WindowsUI.WinButton winButton3;
+        private WindowsUI.Controls.WinProgressbar winProgressbar2;
+        private WindowsUI.WinButton winButton4;
     }
 }
