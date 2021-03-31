@@ -21,9 +21,6 @@ namespace Demo
         {
             MicrosoftUser.GetUserPicturePath(null, out var temp);
             winCircularPicturebox1.ImageLocation = temp;
-            Image result = Image.FromFile(temp);
-            Bitmap btmp = Methods.ResizeImage(result, 64, 64);
-            winTileButton1.Image = (Image)btmp;
         }
 
         private void winTextbox1_TextChanged(object sender, EventArgs e)

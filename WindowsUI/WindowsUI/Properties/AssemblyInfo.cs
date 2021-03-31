@@ -9,8 +9,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Windows UI for C# WinForms")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("LYSEP Corp.")]
-[assembly: AssemblyProduct("WindowsUI")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyProduct("Windows UI")]
+[assembly: AssemblyCopyright("Copyrighted by LYSEP Corp. ©  2021")]
 [assembly: AssemblyTrademark("LYSEP Corp.")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // Tüm değerleri belirtebilir veya varsayılan Derleme ve Düzeltme Numaralarını kullanmak için
 // aşağıda gösterildiği gibi '*' kullanabilirsiniz:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.7")]
+[assembly: AssemblyFileVersion("1.7")]

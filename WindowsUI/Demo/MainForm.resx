@@ -4695,6 +4695,17 @@
         RK5CYII=
 </value>
   </data>
+  <data name="winTextbox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAFNSURBVDhPxZPNSsNAFIVDKXXhSne6kCJKt4IWodrSTUXd+wIKLkRfyB8QrBt9A8X6Aj6HG0HB
+        pUrH705OSgLJJLrpgY+Ze+5PwiQTTVXOuVmYs1XW/8SALozgB0y2WtxVSXXRdKYBd7ALK7AH92D+qUrL
+        RfEWfMOhrIzwj5TvyAqLwke4UehFvAmvMFQ8hAefDImiGbCnD2R5EdsRmN4U78AXNHxBkShYBFNLlhdx
+        A45hTXELTAu+oEgUdOI6ty0rV+QHEH5Dkm34gCuoyc4V+WsoPkOSG2DDLqFsWPgrk1iHd7gAP0zeC9zC
+        PqxC+X9IIhl2DpM3Y98H0xOM460f9Az5N4XEPGSGsS7J+wQnrw7ld5mCJpiastLeCRzIriYaMgO1TzR5
+        SGVZU9zrerAcb/3Pa+cavgF5oikZmFZf6b+L5hrYYaepKz1NRdEvDcDkCtwF/vYAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="winTileButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAABGdBTUEAALGPC/xhBQAABZVJREFUaEPt
