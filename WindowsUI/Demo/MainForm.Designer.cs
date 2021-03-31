@@ -37,8 +37,10 @@ namespace Demo
             this.winTextbox1 = new WindowsUI.Controls.WinTextbox();
             this.winTextbox2 = new WindowsUI.Controls.WinTextbox();
             this.winTileButton1 = new WindowsUI.Controls.WinTileButton();
+            this.winCircularPicturebox1 = new WindowsUI.Controls.WinCircularPicturebox();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.winCircularPicturebox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -47,7 +49,7 @@ namespace Demo
             this.pnlTop.Controls.Add(this.btnMaximize);
             this.pnlTop.Controls.Add(this.btnClose);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.Size = new System.Drawing.Size(553, 30);
+            this.pnlTop.Size = new System.Drawing.Size(1116, 30);
             this.pnlTop.Controls.SetChildIndex(this.btnClose, 0);
             this.pnlTop.Controls.SetChildIndex(this.btnMaximize, 0);
             this.pnlTop.Controls.SetChildIndex(this.btnMinimaze, 0);
@@ -96,7 +98,7 @@ namespace Demo
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Symbol", 9F);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(501, 0);
+            this.btnClose.Location = new System.Drawing.Point(1064, 0);
             this.btnClose.Size = new System.Drawing.Size(52, 30);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "✕";
@@ -204,11 +206,22 @@ namespace Demo
             this.winTileButton1.OnTileButtonMouseClick += new WindowsUI.Controls.WinTileButton.WindowDeletgate(this.winTileButton1_OnTileButtonMouseClick);
             this.winTileButton1.Click += new System.EventHandler(this.winTileButton1_Click);
             // 
+            // winCircularPicturebox1
+            // 
+            this.winCircularPicturebox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.winCircularPicturebox1.Location = new System.Drawing.Point(493, 74);
+            this.winCircularPicturebox1.Name = "winCircularPicturebox1";
+            this.winCircularPicturebox1.Size = new System.Drawing.Size(172, 172);
+            this.winCircularPicturebox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.winCircularPicturebox1.TabIndex = 10;
+            this.winCircularPicturebox1.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 370);
+            this.ClientSize = new System.Drawing.Size(1116, 370);
+            this.Controls.Add(this.winCircularPicturebox1);
             this.Controls.Add(this.winTileButton1);
             this.Controls.Add(this.winLabel1);
             this.Controls.Add(this.winButton1);
@@ -233,8 +246,10 @@ namespace Demo
             this.Controls.SetChildIndex(this.winLabel1, 0);
             this.Controls.SetChildIndex(this.pnlTop, 0);
             this.Controls.SetChildIndex(this.winTileButton1, 0);
+            this.Controls.SetChildIndex(this.winCircularPicturebox1, 0);
             this.pnlTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.winCircularPicturebox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,5 +263,6 @@ namespace Demo
         private WindowsUI.Controls.WinTextbox winTextbox1;
         private WindowsUI.Controls.WinTextbox winTextbox2;
         private WindowsUI.Controls.WinTileButton winTileButton1;
+        private WindowsUI.Controls.WinCircularPicturebox winCircularPicturebox1;
     }
 }

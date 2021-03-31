@@ -19,6 +19,8 @@ namespace WindowsUI.Controls
             this.BackColor = Normal;
             this.Font = new Font("Segoe UI Semibold", 9f);
             this.ForeColor = Color.White;
+            this.DoubleBuffered = true;
+
             imageDisplay.BackColor = Color.Transparent;
             imageDisplay.Dock = DockStyle.Fill;
             imageDisplay.Visible = false;
@@ -46,12 +48,12 @@ namespace WindowsUI.Controls
         public Color Normal { get; set; } = Color.FromArgb(0, 99, 177);
 
         [Category("Windows UI")]
-        [DisplayName("Normal Color")]
-        public Color Hover { get; set; } = Color.FromArgb(0, 66, 118);
+        [DisplayName("Hover Color")]
+        public Color Hover { get; set; } = Color.FromArgb(0, 33, 59);
 
         [Category("Windows UI")]
-        [DisplayName("Normal Color")]
-        public Color Press { get; set; } = Color.FromArgb(0, 33, 59);
+        [DisplayName("Press Color")]              
+        public Color Press { get; set; } = Color.FromArgb(0, 66, 118);
 
         #endregion
 
@@ -199,41 +201,40 @@ namespace WindowsUI.Controls
         private void Img_MouseUp(object sender, MouseEventArgs e)
         {
             base.OnMouseUp(e);
+            backColor = Normal;
+            this.Refresh();
             if (OnTileButtonMouseUp != null)
             {
-                backColor = Normal;
-                this.Invalidate();
                 OnTileButtonMouseUp(this, e);
-                this.Invalidate();
             }
         }
 
         private void Img_MouseHover(object sender, EventArgs e)
         {
+            backColor = Hover;
+            this.Refresh();
             if (OnTileButtonMouseHover != null)
             {
-                backColor = Hover;
-                this.Invalidate();
                 OnTileButtonMouseHover(this, e);
             }
         }
 
         private void Img_MouseDown(object sender, MouseEventArgs e)
         {
+            backColor = Press;
+            this.Refresh();
             if (OnTileButtonMouseDown != null)
             {
-                backColor = Press;
-                this.Invalidate();
                 OnTileButtonMouseDown(this, e);
             }
         }
 
         private void Img_Click(object sender, EventArgs e)
         {
+            backColor = Press;
+            this.Refresh();
             if (OnTileButtonMouseClick != null)
             {
-                backColor = Press;
-                this.Invalidate();
                 OnTileButtonMouseClick(this, e);
             }
         }
@@ -253,32 +254,32 @@ namespace WindowsUI.Controls
         protected override void OnMouseDown(MouseEventArgs e)
         {
             base.OnMouseDown(e);
+            backColor = Press;
+            this.Refresh();
             if (OnTileButtonMouseDown != null)
             {
-                backColor = Press;
                 OnTileButtonMouseDown(this, e);
-                this.Invalidate();
             }
         }
 
         protected override void OnMouseHover(EventArgs e)
         {
+            backColor = Hover;
+            this.Refresh();
             if (OnTileButtonMouseHover != null)
             {
-                backColor = Hover;
                 OnTileButtonMouseHover(this, e);
-                this.Invalidate();
             }
         }
 
         protected override void OnMouseUp(MouseEventArgs e)
         {
             base.OnMouseUp(e);
+            backColor = Normal;
+            this.Refresh();
             if (OnTileButtonMouseUp != null)
             {
-                backColor = Normal;
                 OnTileButtonMouseUp(this, e);
-                this.Invalidate();
             }
         }
 
