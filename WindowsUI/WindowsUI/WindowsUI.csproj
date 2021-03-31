@@ -57,6 +57,9 @@
     <Compile Include="Controls\WinTextbox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\WinTileButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Design\Aero.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Design\Shadow.cs" />

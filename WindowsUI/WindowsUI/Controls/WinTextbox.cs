@@ -73,6 +73,21 @@ namespace WindowsUI.Controls
             }
         }
 
+        [Category("Windows UI")]
+        [DisplayName("Image")]
+        public Image Image
+        {
+            get
+            {
+                return imageDisplay.Image;
+            }
+            set
+            {
+                imageDisplay.Image = value;
+                this.Invalidate();
+            }
+        }
+
         public delegate void textChanged(object sender, EventArgs e);
         public event textChanged TextChanged;
 
@@ -85,7 +100,6 @@ namespace WindowsUI.Controls
             tbValue.BorderStyle = BorderStyle.None;
             tbValue.BackColor = Normal;
             tbValue.Size = new Size(Width - 9, Height - 9);
-            tbValue.Location = new Point(2, 5);
             tbValue.Multiline = true;
             tbValue.Font = new Font("Segoe UI Semibold", 9f);
             tbValue.ForeColor = Color.White;
@@ -93,6 +107,13 @@ namespace WindowsUI.Controls
 
             this.BackColor = tbValue.BackColor;
             this.Controls.Add(tbValue);
+
+            imageDisplay.BackColor = Normal;
+            imageDisplay.SizeMode = PictureBoxSizeMode.StretchImage;
+            imageDisplay.Size = new Size(20, 20);
+            imageDisplay.Location = new Point(2, 3);
+            imageDisplay.Visible = false;
+            this.Controls.Add(imageDisplay);
         }
 
         private void Invoke_TextChanged(object sender, EventArgs e)
@@ -104,6 +125,7 @@ namespace WindowsUI.Controls
         }
 
         TextBox tbValue = new TextBox();
+        PictureBox imageDisplay = new PictureBox();
         protected override void OnCreateControl()
         {
             base.OnCreateControl();
@@ -111,12 +133,32 @@ namespace WindowsUI.Controls
 
         protected override void OnResize(EventArgs e)
         {
-            tbValue.Size = new Size(Width - 9, Height - 9);
-            tbValue.Location = new Point(2, 5);
+            imageDisplay.Size = new Size(this.Height - 5, this.Height - 5);
+            if (Image != null)
+            {
+                tbValue.Size = new Size(Width - 27, Height - 9);
+                tbValue.Location = new Point(22, 5);
+            }
+            else
+            {
+                tbValue.Size = new Size(Width - 9, Height - 9);
+                tbValue.Location = new Point(2, 5);
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            if(Image != null)
+            {
+                imageDisplay.Visible = true;
+                tbValue.Location = new Point(imageDisplay.Size.Width + 2, 5);
+            }
+            else
+            {
+                imageDisplay.Visible = false;
+                tbValue.Location = new Point(2, 5);
+            }
+
             e.Graphics.DrawRectangle(new Pen(Color.DarkGray, 2f), new Rectangle(0, 0, Width, Height));
         }
     }

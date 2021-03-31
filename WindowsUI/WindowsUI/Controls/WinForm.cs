@@ -24,24 +24,41 @@ namespace WindowsUI
         }
 
         public Panel pnlTop = new Panel();
-        Label lblProgram = new Label();
         public Button btnMinimaze = new Button();
         public Button btnMaximize = new Button();
         public Button btnClose = new Button();
         PictureBox pbProgram = new PictureBox();
         PictureBox pbResize = new PictureBox();
 
+        private string title = string.Empty;
         [Category("Windows UI - Control Bar")]
         [DisplayName("Title")]
         public string Title
         {
             get
             {
-                return lblProgram.Text;
+                return title;
             }
             set
             {
-                lblProgram.Text = value;
+                title = value;
+                pnlTop.Invalidate();
+            }
+        }
+
+        private bool showTitle = true;
+        [Category("Windows UI - Control Bar")]
+        [DisplayName("Show Title")]
+        public bool ShowTitle
+        {
+            get
+            {
+                return showTitle;
+            }
+            set
+            {
+                showTitle = value;
+                pnlTop.Invalidate();
             }
         }
 
@@ -87,30 +104,6 @@ namespace WindowsUI
             }
         }
 
-        private bool showTitle = true;
-        [Category("Windows UI - Control Bar")]
-        [DisplayName("Show Title")]
-        public bool ShowTitle
-        {
-            get
-            {
-                return showTitle;
-            }
-            set
-            {
-                showTitle = value;
-                if(TextAnchor == Enums.TextAnchor.Right)
-                {
-                    lblProgram.Visible = showTitle;
-                }
-                else
-                {
-                    lblProgram.Visible = false;
-                }
-                pnlTop.Invalidate();
-            }
-        }
-
         [Category("Windows UI")]
         [DisplayName("Drag")]
         [Description("If Drag with Visual Type, Maybe exception or bug")]
@@ -132,14 +125,15 @@ namespace WindowsUI
             set
             {
                 pbProgram.Visible = value;
-                if (pbProgram.Visible)
-                {
-                    lblProgram.Location = new Point(33, 8);
-                }
-                else
-                {
-                    lblProgram.Location = new Point(5, 8);
-                }
+                //if (pbProgram.Visible)
+                //{
+                //    lblProgram.Location = new Point(33, 8);
+                //}
+                //else
+                //{
+                //    lblProgram.Location = new Point(5, 8);
+                //}
+                pnlTop.Invalidate();
             }
         }
 
@@ -172,7 +166,7 @@ namespace WindowsUI
             }
         }
 
-        private Enums.TextAnchor textAnchor = Enums.TextAnchor.Right;
+        private Enums.TextAnchor textAnchor = Enums.TextAnchor.Left;
         [Category("Windows UI - Control Bar")]
         [DisplayName("Text Anchor")]
         public Enums.TextAnchor TextAnchor
@@ -184,14 +178,6 @@ namespace WindowsUI
             set
             {
                 textAnchor = value;
-                if(textAnchor == Enums.TextAnchor.Right)
-                {
-                    lblProgram.Visible = ShowTitle;
-                }
-                else if (textAnchor == Enums.TextAnchor.Center)
-                {
-                    lblProgram.Visible = false;
-                }
                 pnlTop.Invalidate();
             }
         }
@@ -265,19 +251,19 @@ namespace WindowsUI
             pnlTop.Controls.Add(pbProgram);
             #endregion
 
-            #region Program (Label -> Title)
-            if (this.Icon != null && ShowControlBarIcon)
-            {
-                lblProgram.Location = new Point(33, 8);
-            }
-            else
-            {
-                lblProgram.Location = new Point(5, 8);
-            }
-            lblProgram.ForeColor = ForeColor;
-            AddDrag(lblProgram);
-            pnlTop.Controls.Add(lblProgram);
-            #endregion
+            //#region Program (Label -> Title)
+            //if (this.Icon != null && ShowControlBarIcon)
+            //{
+            //    lblProgram.Location = new Point(33, 8);
+            //}
+            //else
+            //{
+            //    lblProgram.Location = new Point(5, 8);
+            //}
+            //lblProgram.ForeColor = ForeColor;
+            //AddDrag(lblProgram);
+            //pnlTop.Controls.Add(lblProgram);
+            //#endregion
 
             #region ResizeGrip (Picturebox)
             pbResize.MouseDown += SizerMouseDown;
@@ -305,6 +291,18 @@ namespace WindowsUI
                 TextFormatFlags flags = TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter;
                 e.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
                 TextRenderer.DrawText(e.Graphics, Title, Font, new Point(pnlTop.Width + 2, pnlTop.Height / 2), Color.FromArgb(128, ForeColor), flags);
+            }
+            else if (TextAnchor == Enums.TextAnchor.Left && ShowTitle)
+            {
+                e.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
+                if (ShowControlBarIcon)
+                {
+                    e.Graphics.DrawString(Title, Font, new SolidBrush(ForeColor), new Point(33, 8));
+                }
+                else
+                {
+                    e.Graphics.DrawString(Title, Font, new SolidBrush(ForeColor), new Point(5, 8));
+                }
             }
         }
 

@@ -31,5 +31,15 @@ namespace Demo
         {
 
         }
+
+        private void winTileButton1_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(winTileButton1.Text);
+        }
+
+        private void winTileButton1_OnTileButtonMouseClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

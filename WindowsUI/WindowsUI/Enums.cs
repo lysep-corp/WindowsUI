@@ -77,8 +77,26 @@ namespace WindowsUI
 
         public enum TextAnchor
         {
-            Right,
+            Left,
             Center
+        }
+
+        public enum AdvancedTextAnchor
+        {
+            LeftTop,
+            RightTop,
+            LeftBottom,
+            RightBottom,
+            Center,
+            CenterTop,
+            CenterBottom
+        }
+
+        public enum CenterStyle
+        {
+            Normal,
+            AboveImage,
+            BelowImage
         }
     }
 }

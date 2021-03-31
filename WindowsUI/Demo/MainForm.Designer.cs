@@ -31,17 +31,14 @@ namespace Demo
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.winColorPicker1 = new WindowsUI.Controls.WinColorPicker();
-            this.winTextbox1 = new WindowsUI.Controls.WinTextbox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.winTextbox2 = new WindowsUI.Controls.WinTextbox();
             this.winButton1 = new WindowsUI.WinButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.winLabel1 = new WindowsUI.Controls.WinLabel();
+            this.winTextbox1 = new WindowsUI.Controls.WinTextbox();
+            this.winTextbox2 = new WindowsUI.Controls.WinTextbox();
+            this.winTileButton1 = new WindowsUI.Controls.WinTileButton();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -50,7 +47,7 @@ namespace Demo
             this.pnlTop.Controls.Add(this.btnMaximize);
             this.pnlTop.Controls.Add(this.btnClose);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.Size = new System.Drawing.Size(252, 30);
+            this.pnlTop.Size = new System.Drawing.Size(553, 30);
             this.pnlTop.Controls.SetChildIndex(this.btnClose, 0);
             this.pnlTop.Controls.SetChildIndex(this.btnMaximize, 0);
             this.pnlTop.Controls.SetChildIndex(this.btnMinimaze, 0);
@@ -99,7 +96,7 @@ namespace Demo
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Symbol", 9F);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(200, 0);
+            this.btnClose.Location = new System.Drawing.Point(501, 0);
             this.btnClose.Size = new System.Drawing.Size(52, 30);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "✕";
@@ -115,20 +112,6 @@ namespace Demo
             this.winColorPicker1.Size = new System.Drawing.Size(95, 95);
             this.winColorPicker1.TabIndex = 0;
             // 
-            // winTextbox1
-            // 
-            this.winTextbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.winTextbox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.winTextbox1.ForeColor = System.Drawing.Color.White;
-            this.winTextbox1.Location = new System.Drawing.Point(47, 236);
-            this.winTextbox1.Name = "winTextbox1";
-            this.winTextbox1.Normal = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.winTextbox1.Size = new System.Drawing.Size(172, 25);
-            this.winTextbox1.TabIndex = 2;
-            this.winTextbox1.Text = "winTextbox1";
-            this.winTextbox1.TextValue = "";
-            this.winTextbox1.TextChanged += new WindowsUI.Controls.WinTextbox.textChanged(this.winTextbox1_TextChanged);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -138,19 +121,6 @@ namespace Demo
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            // 
-            // winTextbox2
-            // 
-            this.winTextbox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.winTextbox2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.winTextbox2.ForeColor = System.Drawing.Color.White;
-            this.winTextbox2.Location = new System.Drawing.Point(47, 267);
-            this.winTextbox2.Name = "winTextbox2";
-            this.winTextbox2.Normal = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.winTextbox2.Size = new System.Drawing.Size(172, 25);
-            this.winTextbox2.TabIndex = 4;
-            this.winTextbox2.Text = "winTextbox2";
-            this.winTextbox2.TextValue = "";
             // 
             // winButton1
             // 
@@ -168,24 +138,6 @@ namespace Demo
             this.winButton1.UseVisualStyleBackColor = false;
             this.winButton1.Click += new System.EventHandler(this.winButton1_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(24, 238);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(24, 270);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox3.TabIndex = 7;
-            this.pictureBox3.TabStop = false;
-            // 
             // winLabel1
             // 
             this.winLabel1.AutoSize = true;
@@ -197,18 +149,73 @@ namespace Demo
             this.winLabel1.TabIndex = 8;
             this.winLabel1.Text = "ANTI - CORE";
             // 
+            // winTextbox1
+            // 
+            this.winTextbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.winTextbox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.winTextbox1.ForeColor = System.Drawing.Color.White;
+            this.winTextbox1.Image = ((System.Drawing.Image)(resources.GetObject("winTextbox1.Image")));
+            this.winTextbox1.Location = new System.Drawing.Point(47, 236);
+            this.winTextbox1.MaxLength = 32767;
+            this.winTextbox1.Name = "winTextbox1";
+            this.winTextbox1.Normal = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.winTextbox1.PassChar = '\0';
+            this.winTextbox1.ReadOnlyText = false;
+            this.winTextbox1.Size = new System.Drawing.Size(172, 25);
+            this.winTextbox1.TabIndex = 2;
+            this.winTextbox1.Text = "winTextbox1";
+            this.winTextbox1.TextValue = "";
+            this.winTextbox1.TextChanged += new WindowsUI.Controls.WinTextbox.textChanged(this.winTextbox1_TextChanged);
+            // 
+            // winTextbox2
+            // 
+            this.winTextbox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.winTextbox2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.winTextbox2.ForeColor = System.Drawing.Color.White;
+            this.winTextbox2.Image = null;
+            this.winTextbox2.Location = new System.Drawing.Point(47, 267);
+            this.winTextbox2.MaxLength = 32767;
+            this.winTextbox2.Name = "winTextbox2";
+            this.winTextbox2.Normal = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.winTextbox2.PassChar = '\0';
+            this.winTextbox2.ReadOnlyText = false;
+            this.winTextbox2.Size = new System.Drawing.Size(172, 25);
+            this.winTextbox2.TabIndex = 4;
+            this.winTextbox2.Text = "winTextbox2";
+            this.winTextbox2.TextValue = "";
+            // 
+            // winTileButton1
+            // 
+            this.winTileButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
+            this.winTileButton1.CenterStyle = WindowsUI.Enums.CenterStyle.AboveImage;
+            this.winTileButton1.Content = "Discord";
+            this.winTileButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.winTileButton1.ForeColor = System.Drawing.Color.White;
+            this.winTileButton1.Hover = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(118)))));
+            this.winTileButton1.Image = ((System.Drawing.Image)(resources.GetObject("winTileButton1.Image")));
+            this.winTileButton1.Location = new System.Drawing.Point(275, 74);
+            this.winTileButton1.Name = "winTileButton1";
+            this.winTileButton1.Normal = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
+            this.winTileButton1.Press = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(33)))), ((int)(((byte)(59)))));
+            this.winTileButton1.Size = new System.Drawing.Size(212, 241);
+            this.winTileButton1.TabIndex = 9;
+            this.winTileButton1.Text = "winTileButton1";
+            this.winTileButton1.TextAnchor = WindowsUI.Enums.AdvancedTextAnchor.Center;
+            this.winTileButton1.OnTileButtonMouseClick += new WindowsUI.Controls.WinTileButton.WindowDeletgate(this.winTileButton1_OnTileButtonMouseClick);
+            this.winTileButton1.Click += new System.EventHandler(this.winTileButton1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(252, 370);
+            this.ClientSize = new System.Drawing.Size(553, 370);
+            this.Controls.Add(this.winTileButton1);
             this.Controls.Add(this.winLabel1);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.winButton1);
             this.Controls.Add(this.winTextbox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.winTextbox1);
+            this.FormAccent = WindowsUI.Enums.AccentState.ACCENT_ENABLE_HOSTBACKDROP;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeButton = false;
             this.MinHeight = 150;
@@ -219,18 +226,15 @@ namespace Demo
             this.TextAnchor = WindowsUI.Enums.TextAnchor.Center;
             this.Title = "Log In";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.Controls.SetChildIndex(this.pnlTop, 0);
             this.Controls.SetChildIndex(this.winTextbox1, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.winTextbox2, 0);
             this.Controls.SetChildIndex(this.winButton1, 0);
-            this.Controls.SetChildIndex(this.pictureBox2, 0);
-            this.Controls.SetChildIndex(this.pictureBox3, 0);
             this.Controls.SetChildIndex(this.winLabel1, 0);
+            this.Controls.SetChildIndex(this.pnlTop, 0);
+            this.Controls.SetChildIndex(this.winTileButton1, 0);
             this.pnlTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,12 +242,11 @@ namespace Demo
 
         #endregion
         private WindowsUI.Controls.WinColorPicker winColorPicker1;
-        private WindowsUI.Controls.WinTextbox winTextbox1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private WindowsUI.Controls.WinTextbox winTextbox2;
         private WindowsUI.WinButton winButton1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private WindowsUI.Controls.WinLabel winLabel1;
+        private WindowsUI.Controls.WinTextbox winTextbox1;
+        private WindowsUI.Controls.WinTextbox winTextbox2;
+        private WindowsUI.Controls.WinTileButton winTileButton1;
     }
 }
