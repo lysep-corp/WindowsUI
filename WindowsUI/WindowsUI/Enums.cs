@@ -92,6 +92,15 @@ namespace WindowsUI
             CenterBottom
         }
 
+        public enum ButtonImageAnchor
+        {
+            Left,
+            CenterLeft,
+            Center,
+            CenterRight,
+            Right
+        }
+
         public enum CenterStyle
         {
             Normal,

@@ -47,5 +47,10 @@ namespace Demo
         {
             this.lblSelectedTabIndex.Text = "Selected Tab Index : " + winButtonControl1.SelectedTabIndex;
         }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
     }
 }

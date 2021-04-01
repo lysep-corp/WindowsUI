@@ -40,6 +40,14 @@ namespace WindowsUI
         public float BorderSize { get; set; } = 1f;
 
         [Category("Windows UI")]
+        [DisplayName("Image")]
+        public Image Image { get; set; } = null;
+
+        [Category("Windows UI")]
+        [DisplayName("Image Anchor")]
+        public Enums.ButtonImageAnchor ImageAnchor { get; set; } = Enums.ButtonImageAnchor.Left;
+
+        [Category("Windows UI")]
         [DisplayName("Selected")]
         public bool Selected { get; set; } = false;
 
@@ -76,6 +84,38 @@ namespace WindowsUI
             base.OnPaint(e);
             e.Graphics.FillRectangle(new SolidBrush(currentBackcolor), this.ClientRectangle);
             e.Graphics.DrawRectangle(new Pen(Border, BorderSize), new Rectangle(0, 0, Width - 1, Height - 1));
+            if(Image != null)
+            {
+                int cursorX = 0, cursorY = 0;
+                switch(ImageAnchor)
+                {
+                    case Enums.ButtonImageAnchor.Left:
+                        cursorX = 3;
+                        cursorY = 3;
+                        break;
+
+                    case Enums.ButtonImageAnchor.Right:
+                        cursorX = Width - (this.Height) + 2;
+                        cursorY = 3;
+                        break;
+
+                    case Enums.ButtonImageAnchor.Center:
+                        cursorX = Width / 2 - ((this.Height - 7) / 2);
+                        cursorY = 3;
+                        break;
+
+                    case Enums.ButtonImageAnchor.CenterLeft:
+                        cursorX = (Width / 2 - ((this.Height) / 2)) - (TextRenderer.MeasureText(Text, Font).Width  / 2) - 5;
+                        cursorY = 3;
+                        break;
+
+                    case Enums.ButtonImageAnchor.CenterRight:
+                        cursorX = (Width / 2 - ((this.Height) / 2)) + (TextRenderer.MeasureText(Text, Font).Width / 2) + 11;
+                        cursorY = 3;
+                        break;
+                }
+                e.Graphics.DrawImage(Methods.ResizeImage(Image, this.Height - 7, this.Height - 7), new PointF(cursorX, cursorY));
+            }
             if(Selected) {
                 if (SelectedStyle == Enums.SelectedStyle.Left) { e.Graphics.FillRectangle(new SolidBrush(SelectedColor), 1, 1, SelectedBorderSize, Height - 1); }
                 else if (SelectedStyle == Enums.SelectedStyle.Fill) { e.Graphics.FillRectangle(new SolidBrush(SelectedColor), this.ClientRectangle); }
@@ -84,6 +124,7 @@ namespace WindowsUI
             e.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
             TextRenderer.DrawText(e.Graphics, Text, Font, new Point(Width + 3, Height / 2), ForeColor, flags);
         }
+
 
         protected override void OnMouseDown(MouseEventArgs mevent)
         {
