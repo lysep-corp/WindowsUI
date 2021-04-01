@@ -11,5 +11,6 @@
 
 01.04.2021
 [+] ADD -> Custom Button Placeholder similar of Windows Explorer
-[-] ADD -> WinButton selected state / with Left and Fill Styles
+[+] ADD -> WinButton selected state / with Left and Fill Styles
 [+] CHANGE -> Update WinButton from CSharpLoader
+[-] ADD -> Add Image to WinButton
