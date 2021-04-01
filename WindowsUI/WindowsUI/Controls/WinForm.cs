@@ -137,8 +137,20 @@ namespace WindowsUI
             }
         }
 
+        private bool resizer = true;
         [Category("Windows UI")]
-        public bool Resizer { get; set; } = true;
+        public bool Resizer
+        {
+            get
+            {
+                return resizer;
+            }
+            set
+            {
+                resizer = value;
+                pbResize.Visible = resizer;
+            }
+        }
 
         [Category("Windows UI - Resize")]
         public int MinWidth { get; set; } = 350;

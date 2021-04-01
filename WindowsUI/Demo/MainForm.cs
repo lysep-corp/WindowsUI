@@ -25,7 +25,7 @@ namespace Demo
 
         private void winTextbox1_TextChanged(object sender, EventArgs e)
         {
-            Console.WriteLine(winTextbox1.TextValue);
+            Console.WriteLine(winTextbox1.Content);
         }
 
         private void winButton1_Click(object sender, EventArgs e)
@@ -41,6 +41,11 @@ namespace Demo
         private void winTileButton1_OnTileButtonMouseClick(object sender, EventArgs e)
         {
 
+        }
+
+        private void updateSelectedTab_Tick(object sender, EventArgs e)
+        {
+            this.lblSelectedTabIndex.Text = "Selected Tab Index : " + winButtonControl1.SelectedTabIndex;
         }
     }
 }

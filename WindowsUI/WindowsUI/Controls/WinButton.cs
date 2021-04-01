@@ -40,7 +40,7 @@ namespace WindowsUI
         public float BorderSize { get; set; } = 1f;
 
         [Category("Windows UI")]
-        [DisplayName("Selected Size")]
+        [DisplayName("Selected")]
         public bool Selected { get; set; } = false;
 
         [Category("Windows UI")]
@@ -49,7 +49,11 @@ namespace WindowsUI
 
         [Category("Windows UI")]
         [DisplayName("Selected Border Size")]
-        public int SelectedBorderSize { get; set; } = 4;
+        public int SelectedBorderSize { get; set; } = 2;
+
+        [Category("Windows UI")]
+        [DisplayName("Selected Style")]
+        public Enums.SelectedStyle SelectedStyle { get; set; } = Enums.SelectedStyle.Left;
 
         private Color currentBackcolor;
         public WinButton()
@@ -72,7 +76,10 @@ namespace WindowsUI
             base.OnPaint(e);
             e.Graphics.FillRectangle(new SolidBrush(currentBackcolor), this.ClientRectangle);
             e.Graphics.DrawRectangle(new Pen(Border, BorderSize), new Rectangle(0, 0, Width - 1, Height - 1));
-            if(Selected) { e.Graphics.FillRectangle(new SolidBrush(SelectedColor), 1, 1, SelectedBorderSize, Height - 1); }
+            if(Selected) {
+                if (SelectedStyle == Enums.SelectedStyle.Left) { e.Graphics.FillRectangle(new SolidBrush(SelectedColor), 1, 1, SelectedBorderSize, Height - 1); }
+                else if (SelectedStyle == Enums.SelectedStyle.Fill) { e.Graphics.FillRectangle(new SolidBrush(SelectedColor), this.ClientRectangle); }
+            }
             TextFormatFlags flags = TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter;
             e.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
             TextRenderer.DrawText(e.Graphics, Text, Font, new Point(Width + 3, Height / 2), ForeColor, flags);

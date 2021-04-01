@@ -98,5 +98,11 @@ namespace WindowsUI
             AboveImage,
             BelowImage
         }
+
+        public enum SelectedStyle
+        {
+            Left,
+            Fill
+        }
     }
 }

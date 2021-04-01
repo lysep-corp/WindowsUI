@@ -18,8 +18,8 @@ namespace WindowsUI.Controls
         public Color Normal { get; set; } = Color.FromArgb(25, 25, 25);
 
         [Category("Windows UI")]
-        [DisplayName("Text Value")]
-        public string TextValue
+        [DisplayName("Content")]
+        public string Content
         {
             get
             {

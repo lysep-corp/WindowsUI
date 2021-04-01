@@ -29,6 +29,7 @@ namespace Demo
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.winColorPicker1 = new WindowsUI.Controls.WinColorPicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -44,12 +45,14 @@ namespace Demo
             this.winLabel3 = new WindowsUI.Controls.WinLabel();
             this.winPanel1 = new WindowsUI.WinPanel();
             this.winProgressbar1 = new WindowsUI.Controls.WinProgressbar();
+            this.winCheckbox2 = new WindowsUI.Controls.WinCheckbox();
+            this.winProgressbar2 = new WindowsUI.Controls.WinProgressbar();
+            this.updateSelectedTab = new System.Windows.Forms.Timer(this.components);
             this.winButtonControl1 = new WindowsUI.Controls.WinButtonControl();
             this.winButton2 = new WindowsUI.WinButton();
             this.winButton3 = new WindowsUI.WinButton();
-            this.winCheckbox2 = new WindowsUI.Controls.WinCheckbox();
-            this.winProgressbar2 = new WindowsUI.Controls.WinProgressbar();
             this.winButton4 = new WindowsUI.WinButton();
+            this.lblSelectedTabIndex = new WindowsUI.Controls.WinLabel();
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.winCircularPicturebox1)).BeginInit();
@@ -63,7 +66,7 @@ namespace Demo
             this.pnlTop.Controls.Add(this.btnMaximize);
             this.pnlTop.Controls.Add(this.btnClose);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.Size = new System.Drawing.Size(490, 30);
+            this.pnlTop.Size = new System.Drawing.Size(494, 30);
             this.pnlTop.Controls.SetChildIndex(this.btnClose, 0);
             this.pnlTop.Controls.SetChildIndex(this.btnMaximize, 0);
             this.pnlTop.Controls.SetChildIndex(this.btnMinimaze, 0);
@@ -112,7 +115,7 @@ namespace Demo
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Symbol", 9F);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(438, 0);
+            this.btnClose.Location = new System.Drawing.Point(442, 0);
             this.btnClose.Size = new System.Drawing.Size(52, 30);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "✕";
@@ -153,6 +156,7 @@ namespace Demo
             this.winButton1.Selected = false;
             this.winButton1.SelectedBorderSize = 4;
             this.winButton1.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
+            this.winButton1.SelectedStyle = WindowsUI.Enums.SelectedStyle.Left;
             this.winButton1.Size = new System.Drawing.Size(172, 23);
             this.winButton1.TabIndex = 5;
             this.winButton1.Text = "Log In";
@@ -173,6 +177,7 @@ namespace Demo
             // winTextbox1
             // 
             this.winTextbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.winTextbox1.Content = "";
             this.winTextbox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.winTextbox1.ForeColor = System.Drawing.Color.White;
             this.winTextbox1.Image = ((System.Drawing.Image)(resources.GetObject("winTextbox1.Image")));
@@ -185,12 +190,12 @@ namespace Demo
             this.winTextbox1.Size = new System.Drawing.Size(172, 25);
             this.winTextbox1.TabIndex = 2;
             this.winTextbox1.Text = "winTextbox1";
-            this.winTextbox1.TextValue = "";
             this.winTextbox1.TextChanged += new WindowsUI.Controls.WinTextbox.textChanged(this.winTextbox1_TextChanged);
             // 
             // winTextbox2
             // 
             this.winTextbox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.winTextbox2.Content = "";
             this.winTextbox2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.winTextbox2.ForeColor = System.Drawing.Color.White;
             this.winTextbox2.Image = ((System.Drawing.Image)(resources.GetObject("winTextbox2.Image")));
@@ -203,7 +208,6 @@ namespace Demo
             this.winTextbox2.Size = new System.Drawing.Size(172, 25);
             this.winTextbox2.TabIndex = 4;
             this.winTextbox2.Text = "winTextbox2";
-            this.winTextbox2.TextValue = "";
             // 
             // winTileButton1
             // 
@@ -321,58 +325,6 @@ namespace Demo
             this.winProgressbar1.TabIndex = 16;
             this.winProgressbar1.Value = 90;
             // 
-            // winButtonControl1
-            // 
-            this.winButtonControl1.BackColor = System.Drawing.Color.Black;
-            this.winButtonControl1.Controls.Add(this.winButton2);
-            this.winButtonControl1.Controls.Add(this.winButton3);
-            this.winButtonControl1.Controls.Add(this.winButton4);
-            this.winButtonControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.winButtonControl1.Location = new System.Drawing.Point(0, 30);
-            this.winButtonControl1.Name = "winButtonControl1";
-            this.winButtonControl1.Size = new System.Drawing.Size(490, 26);
-            this.winButtonControl1.TabIndex = 16;
-            // 
-            // winButton2
-            // 
-            this.winButton2.Border = System.Drawing.Color.Black;
-            this.winButton2.BorderSize = 0F;
-            this.winButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.winButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.winButton2.ForeColor = System.Drawing.Color.White;
-            this.winButton2.Location = new System.Drawing.Point(1, 1);
-            this.winButton2.Margin = new System.Windows.Forms.Padding(1);
-            this.winButton2.Name = "winButton2";
-            this.winButton2.Normal = System.Drawing.Color.Black;
-            this.winButton2.Press = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.winButton2.Selected = false;
-            this.winButton2.SelectedBorderSize = 4;
-            this.winButton2.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
-            this.winButton2.Size = new System.Drawing.Size(75, 23);
-            this.winButton2.TabIndex = 0;
-            this.winButton2.Text = "winButton2";
-            this.winButton2.UseVisualStyleBackColor = true;
-            // 
-            // winButton3
-            // 
-            this.winButton3.Border = System.Drawing.Color.Black;
-            this.winButton3.BorderSize = 0F;
-            this.winButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.winButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.winButton3.ForeColor = System.Drawing.Color.White;
-            this.winButton3.Location = new System.Drawing.Point(78, 1);
-            this.winButton3.Margin = new System.Windows.Forms.Padding(1);
-            this.winButton3.Name = "winButton3";
-            this.winButton3.Normal = System.Drawing.Color.Black;
-            this.winButton3.Press = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.winButton3.Selected = false;
-            this.winButton3.SelectedBorderSize = 4;
-            this.winButton3.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
-            this.winButton3.Size = new System.Drawing.Size(75, 23);
-            this.winButton3.TabIndex = 1;
-            this.winButton3.Text = "winButton3";
-            this.winButton3.UseVisualStyleBackColor = true;
-            // 
             // winCheckbox2
             // 
             this.winCheckbox2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
@@ -402,6 +354,67 @@ namespace Demo
             this.winProgressbar2.Size = new System.Drawing.Size(100, 23);
             this.winProgressbar2.TabIndex = 3;
             // 
+            // updateSelectedTab
+            // 
+            this.updateSelectedTab.Enabled = true;
+            this.updateSelectedTab.Tick += new System.EventHandler(this.updateSelectedTab_Tick);
+            // 
+            // winButtonControl1
+            // 
+            this.winButtonControl1.BackColor = System.Drawing.Color.Black;
+            this.winButtonControl1.Controls.Add(this.winButton2);
+            this.winButtonControl1.Controls.Add(this.winButton3);
+            this.winButtonControl1.Controls.Add(this.winButton4);
+            this.winButtonControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.winButtonControl1.Location = new System.Drawing.Point(0, 30);
+            this.winButtonControl1.Name = "winButtonControl1";
+            this.winButtonControl1.SelectedTabIndex = 1;
+            this.winButtonControl1.Size = new System.Drawing.Size(494, 26);
+            this.winButtonControl1.TabBarStyle = true;
+            this.winButtonControl1.TabIndex = 17;
+            // 
+            // winButton2
+            // 
+            this.winButton2.Border = System.Drawing.Color.Black;
+            this.winButton2.BorderSize = 0F;
+            this.winButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.winButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.winButton2.ForeColor = System.Drawing.Color.White;
+            this.winButton2.Location = new System.Drawing.Point(1, 1);
+            this.winButton2.Margin = new System.Windows.Forms.Padding(1);
+            this.winButton2.Name = "winButton2";
+            this.winButton2.Normal = System.Drawing.Color.Black;
+            this.winButton2.Press = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.winButton2.Selected = false;
+            this.winButton2.SelectedBorderSize = 2;
+            this.winButton2.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
+            this.winButton2.SelectedStyle = WindowsUI.Enums.SelectedStyle.Fill;
+            this.winButton2.Size = new System.Drawing.Size(95, 23);
+            this.winButton2.TabIndex = 0;
+            this.winButton2.Text = "WinButtonTab";
+            this.winButton2.UseVisualStyleBackColor = true;
+            // 
+            // winButton3
+            // 
+            this.winButton3.Border = System.Drawing.Color.Black;
+            this.winButton3.BorderSize = 0F;
+            this.winButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.winButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.winButton3.ForeColor = System.Drawing.Color.White;
+            this.winButton3.Location = new System.Drawing.Point(98, 1);
+            this.winButton3.Margin = new System.Windows.Forms.Padding(1);
+            this.winButton3.Name = "winButton3";
+            this.winButton3.Normal = System.Drawing.Color.Black;
+            this.winButton3.Press = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.winButton3.Selected = true;
+            this.winButton3.SelectedBorderSize = 2;
+            this.winButton3.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
+            this.winButton3.SelectedStyle = WindowsUI.Enums.SelectedStyle.Fill;
+            this.winButton3.Size = new System.Drawing.Size(95, 23);
+            this.winButton3.TabIndex = 1;
+            this.winButton3.Text = "WinButtonTab";
+            this.winButton3.UseVisualStyleBackColor = true;
+            // 
             // winButton4
             // 
             this.winButton4.Border = System.Drawing.Color.Black;
@@ -409,24 +422,37 @@ namespace Demo
             this.winButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.winButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.winButton4.ForeColor = System.Drawing.Color.White;
-            this.winButton4.Location = new System.Drawing.Point(155, 1);
+            this.winButton4.Location = new System.Drawing.Point(195, 1);
             this.winButton4.Margin = new System.Windows.Forms.Padding(1);
             this.winButton4.Name = "winButton4";
             this.winButton4.Normal = System.Drawing.Color.Black;
             this.winButton4.Press = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.winButton4.Selected = true;
-            this.winButton4.SelectedBorderSize = 4;
+            this.winButton4.Selected = false;
+            this.winButton4.SelectedBorderSize = 2;
             this.winButton4.SelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
-            this.winButton4.Size = new System.Drawing.Size(75, 23);
+            this.winButton4.SelectedStyle = WindowsUI.Enums.SelectedStyle.Fill;
+            this.winButton4.Size = new System.Drawing.Size(95, 23);
             this.winButton4.TabIndex = 3;
-            this.winButton4.Text = "winButton4";
+            this.winButton4.Text = "WinButtonTab";
             this.winButton4.UseVisualStyleBackColor = true;
+            // 
+            // lblSelectedTabIndex
+            // 
+            this.lblSelectedTabIndex.AutoSize = true;
+            this.lblSelectedTabIndex.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.lblSelectedTabIndex.ForeColor = System.Drawing.Color.White;
+            this.lblSelectedTabIndex.Location = new System.Drawing.Point(204, 69);
+            this.lblSelectedTabIndex.Name = "lblSelectedTabIndex";
+            this.lblSelectedTabIndex.Size = new System.Drawing.Size(123, 15);
+            this.lblSelectedTabIndex.TabIndex = 18;
+            this.lblSelectedTabIndex.Text = "Selected Tab Index : 0";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 464);
+            this.ClientSize = new System.Drawing.Size(494, 406);
+            this.Controls.Add(this.lblSelectedTabIndex);
             this.Controls.Add(this.winButtonControl1);
             this.Controls.Add(this.winPanel1);
             this.Controls.Add(this.winLabel2);
@@ -436,7 +462,6 @@ namespace Demo
             this.Controls.Add(this.winTextbox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.winTextbox1);
-            this.FormAccent = WindowsUI.Enums.AccentState.ACCENT_ENABLE_HOSTBACKDROP;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeButton = false;
             this.MinHeight = 150;
@@ -457,6 +482,7 @@ namespace Demo
             this.Controls.SetChildIndex(this.winPanel1, 0);
             this.Controls.SetChildIndex(this.pnlTop, 0);
             this.Controls.SetChildIndex(this.winButtonControl1, 0);
+            this.Controls.SetChildIndex(this.lblSelectedTabIndex, 0);
             this.pnlTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.winCircularPicturebox1)).EndInit();
@@ -483,11 +509,13 @@ namespace Demo
         private WindowsUI.Controls.WinLabel winLabel3;
         private WindowsUI.WinPanel winPanel1;
         private WindowsUI.Controls.WinProgressbar winProgressbar1;
-        private WindowsUI.Controls.WinButtonControl winButtonControl1;
         private WindowsUI.Controls.WinCheckbox winCheckbox2;
+        private WindowsUI.Controls.WinProgressbar winProgressbar2;
+        private System.Windows.Forms.Timer updateSelectedTab;
+        private WindowsUI.Controls.WinButtonControl winButtonControl1;
         private WindowsUI.WinButton winButton2;
         private WindowsUI.WinButton winButton3;
-        private WindowsUI.Controls.WinProgressbar winProgressbar2;
         private WindowsUI.WinButton winButton4;
+        private WindowsUI.Controls.WinLabel lblSelectedTabIndex;
     }
 }
