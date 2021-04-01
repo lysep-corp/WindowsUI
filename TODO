@@ -13,4 +13,5 @@
 [+] ADD -> Custom Button Placeholder similar of Windows Explorer
 [+] ADD -> WinButton selected state / with Left and Fill Styles
 [+] CHANGE -> Update WinButton from CSharpLoader
-[-] ADD -> Add Image to WinButton
+[+] ADD -> Add Image to WinButton
+[-] CHANGE -> WinTileButton.Image - Display change from "Picturebox" to "e.Graphics.DrawImage();"
