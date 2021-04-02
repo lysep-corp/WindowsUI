@@ -66,7 +66,7 @@ namespace Demo
             this.pnlTop.Controls.Add(this.btnMaximize);
             this.pnlTop.Controls.Add(this.btnClose);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.Size = new System.Drawing.Size(620, 30);
+            this.pnlTop.Size = new System.Drawing.Size(496, 30);
             this.pnlTop.Controls.SetChildIndex(this.btnClose, 0);
             this.pnlTop.Controls.SetChildIndex(this.btnMaximize, 0);
             this.pnlTop.Controls.SetChildIndex(this.btnMinimaze, 0);
@@ -115,7 +115,7 @@ namespace Demo
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI Symbol", 9F);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(568, 0);
+            this.btnClose.Location = new System.Drawing.Point(444, 0);
             this.btnClose.Size = new System.Drawing.Size(52, 30);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "✕";
@@ -161,7 +161,7 @@ namespace Demo
             this.winButton1.SelectedStyle = WindowsUI.Enums.SelectedStyle.Left;
             this.winButton1.Size = new System.Drawing.Size(172, 23);
             this.winButton1.TabIndex = 5;
-            this.winButton1.Text = "Log InASDASD";
+            this.winButton1.Text = "Log In";
             this.winButton1.UseVisualStyleBackColor = false;
             this.winButton1.Click += new System.EventHandler(this.winButton1_Click);
             // 
@@ -187,6 +187,7 @@ namespace Demo
             this.winTextbox1.MaxLength = 32767;
             this.winTextbox1.Name = "winTextbox1";
             this.winTextbox1.Normal = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.winTextbox1.OnlyNumbers = false;
             this.winTextbox1.PassChar = '\0';
             this.winTextbox1.ReadOnlyText = false;
             this.winTextbox1.Size = new System.Drawing.Size(172, 25);
@@ -205,6 +206,7 @@ namespace Demo
             this.winTextbox2.MaxLength = 32767;
             this.winTextbox2.Name = "winTextbox2";
             this.winTextbox2.Normal = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.winTextbox2.OnlyNumbers = false;
             this.winTextbox2.PassChar = '\0';
             this.winTextbox2.ReadOnlyText = false;
             this.winTextbox2.Size = new System.Drawing.Size(172, 25);
@@ -371,7 +373,7 @@ namespace Demo
             this.winButtonControl1.Location = new System.Drawing.Point(0, 30);
             this.winButtonControl1.Name = "winButtonControl1";
             this.winButtonControl1.SelectedTabIndex = 1;
-            this.winButtonControl1.Size = new System.Drawing.Size(620, 26);
+            this.winButtonControl1.Size = new System.Drawing.Size(496, 26);
             this.winButtonControl1.TabBarStyle = true;
             this.winButtonControl1.TabIndex = 17;
             // 
@@ -459,7 +461,8 @@ namespace Demo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 406);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.ClientSize = new System.Drawing.Size(496, 399);
             this.Controls.Add(this.lblSelectedTabIndex);
             this.Controls.Add(this.winButtonControl1);
             this.Controls.Add(this.winPanel1);

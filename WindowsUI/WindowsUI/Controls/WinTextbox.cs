@@ -60,6 +60,10 @@ namespace WindowsUI.Controls
         }
 
         [Category("Windows UI")]
+        [DisplayName("Only Numbers")]
+        public bool OnlyNumbers { get; set; } = false;
+
+        [Category("Windows UI")]
         [DisplayName("Max Length")]
         public int MaxLength
         {
@@ -106,6 +110,7 @@ namespace WindowsUI.Controls
             tbValue.TextChanged += new EventHandler(Invoke_TextChanged);
 
             this.BackColor = tbValue.BackColor;
+            tbValue.KeyPress += new KeyPressEventHandler(tbValue_KeyPress);
             this.Controls.Add(tbValue);
 
             imageDisplay.BackColor = Normal;
@@ -160,6 +165,14 @@ namespace WindowsUI.Controls
             }
 
             e.Graphics.DrawRectangle(new Pen(Color.DarkGray, 2f), new Rectangle(0, 0, Width, Height));
+        }
+
+        private void tbValue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (OnlyNumbers)
+            {
+                e.Handled = !char.IsDigit(e.KeyChar);
+            }
         }
     }
 }
